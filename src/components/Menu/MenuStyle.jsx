@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 1550px;
   max-width: 100%;
-  
+
   .ui-segment {
     background: rgb(220, 237, 247);
     box-shadow: none;
@@ -21,20 +21,19 @@ export const LogoContainer = styled.div`
   text-decoration: none;
   font-size: 20px;
   font-weight: 600;
-  
 `;
 
 export const LinkContainer = styled.div`
   width: 60%;
   display: flex;
   flex-flow: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
   padding: 20px;
-  
+
   a {
     color: #222;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 600;
     font-family: "BPG Nino Mtavruli", sans-serif;
   }
@@ -54,6 +53,6 @@ export const LoginContainer = styled.div`
 `;
 export const Logo = styled.img`
   width: 100px;
-  position:absolute;
+  position: absolute;
   top: 0;
 `;

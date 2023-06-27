@@ -12,13 +12,13 @@ const Carousel = () => {
     };
     const images = [
         {
-            image: 'https://media.istockphoto.com/id/1160446488/photo/tbilisi-downtown-georgia-taken-in-april-2019.jpg?s=612x612&w=0&k=20&c=yybfqVCUZsy8qNWMnpmX1AjAmbuXtj5Kg5aekaeHj7M='
+            image: 'https://www.usa.gov/s3/files/2023-01/Banner_img_Turning_65_en.png'
         },
         {
-            image: 'https://www.telegraph.co.uk/content/dam/Travel/2019/October/tbilisi-top.jpg?imwidth=680'
+            image: 'https://www.usa.gov/s3/files/2023-01/Banner_img_Birth_en.png'
         },
         {
-            image: 'https://inchiostrovirtuale.it/wp-content/uploads/2019/09/andre-in-georgia-tbilisi.jpg'
+            image: 'https://www.usa.gov/s3/files/2023-01/Banner_img_Turning_18_en.png'
         }
     ]
     return (
