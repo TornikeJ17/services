@@ -6,6 +6,7 @@ export const Container = styled.div`
   justify-content: start;
   width: 1550px;
   max-width: 100%;
+  margin-bottom: 57px;
   .ui-form {
     width: 50%;
     .ui-form__dropdown {
@@ -51,6 +52,12 @@ export const Container = styled.div`
     .ui-box {
       width: 500px !important;
       max-width: 100% !important;
+      .ui-input__icon {
+        .ui-icon {
+          position: absolute;
+          right: 0;
+        }
+      }
     }
     .ui-form__label {
       font-family: "BPG Nino Mtavruli", sans-serif;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, MapContainer } from "./ContactStyle";
 import {
   Form,
@@ -10,31 +10,61 @@ import {
 
 const Contact = ({ services }) => {
   const servicesName = services.map((x) => x.name);
-  console.log(servicesName);
+  const [formValues, setFormValues] = useState({
+    serviceName: "",
+    email: "",
+    phoneNumber: "",
+    title: "",
+    comment: ""
+  });
+
+  const handleFormChange = (event, { name, value }) => {
+    setFormValues((prevValues) => ({
+      ...prevValues,
+      [name]: value
+    }));
+  };
+
+  const { serviceName, email, phoneNumber, title, comment } = formValues;
+  const isFormEmpty = !serviceName || !email || !phoneNumber || !title || !comment;
+
   return (
     <Container>
       <Form>
-        <FormDropdown label="სერვისის დასახელება" items={servicesName} />
+        <FormDropdown
+          label="სერვისის დასახელება"
+          items={servicesName}
+          name="serviceName"
+          onChange={handleFormChange}
+        />
         <FormInput
           className="formInputs"
           label="ელფოსტა"
-          name="firstName"
+          name="email"
           required
+          onChange={handleFormChange}
         />
         <FormInput
           className="formInputs"
           label="ტელეფონის ნომერი"
-          name="firstName"
+          name="phoneNumber"
           required
+          onChange={handleFormChange}
         />
         <FormInput
           className="formInputs"
           label="სათაური"
-          name="firstName"
+          name="title"
           required
+          onChange={handleFormChange}
         />
-        <FormTextArea label="კომენტარი" name="bio" required />
-        <FormButton content="გაგზავნა" primary/>
+        <FormTextArea
+          label="კომენტარი"
+          name="comment"
+          required
+          onChange={handleFormChange}
+        />
+        <FormButton content="გაგზავნა" primary disabled={isFormEmpty} />
       </Form>
       <MapContainer>
         <div className="mapouter">
@@ -42,10 +72,10 @@ const Contact = ({ services }) => {
             <iframe
               className="gmap_iframe"
               width="100%"
-              frameborder="0"
-              scrolling="no"
-              marginheight="0"
-              marginwidth="0"
+              frameBorder="0"
+              marginHeight="0"
+              scrolling="0"
+              marginWidth="0"
               src="https://maps.google.com/maps?width=1000&amp;height=600&amp;hl=en&amp;q=სოციალური სერვისების სააგენტო&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
             ></iframe>
           </div>
