@@ -20,6 +20,7 @@ const Menu = () => {
             </LogoContainer>
             <LinkContainer>
               <Link to="/">სერვისები</Link>
+              <Link to="/map">რუკით ძიება</Link>
               <Link to="/dashboard">ჩვენს შესახებ</Link>
               <Link to="/contact">კონტაქტი</Link>
             </LinkContainer>

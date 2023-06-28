@@ -6,9 +6,10 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import Menu from "./components/Menu/Menu";
 import Chat from "./components/Chat/Chat";
 import ServicePage from "./components/Service/ServicePage/ServicePage";
-import { services } from "./components/api/services";
+import { services, regions } from "./components/api/services";
 import Contact from "./components/contact/Contact";
 import Footer from "./components/Footer/Footer";
+import Map from "./components/Map/Map";
 const App = () => {
   const [chatButton, setChatButton] = useState(false);
 
@@ -18,6 +19,10 @@ const App = () => {
       <Menu />
       <Routes>
         <Route path="/" element={<LandingPage services={services} />} />
+        <Route
+          path="/map"
+          element={<Map services={services} regions={regions} />}
+        />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/:id" element={<ServicePage service={services} />} />
         <Route path="/contact" element={<Contact services={services} />} />

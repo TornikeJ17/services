@@ -6,6 +6,7 @@ export const Container = styled.div`
   top: 60px;
   width: 1550px;
   max-width: 100%;
+  justify-content: space-between;
   .ui-button {
     background: rgb(220, 237, 247);
     color: #222;
@@ -19,6 +20,7 @@ export const ItemsContainer = styled.div`
   display: flex;
   flex-flow: column;
   gap: 16px;
+  width: 70%;
 `;
 
 export const ItemTitles = styled.h4`
@@ -38,4 +40,4 @@ export const CategoryBlock = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
-`
+`;
