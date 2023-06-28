@@ -192,6 +192,7 @@ const Service = ({ services }) => {
                         </ServiceTitle>
                       }
                       content={service.name.length < 100 ? null : service.name}
+                      pointing
                     />
                     <ServiceBenefits>{service.benefits}</ServiceBenefits>
                   </ItemContainerBlock>

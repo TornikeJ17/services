@@ -5,6 +5,8 @@ import {
   BlockTwo,
   Image,
   LinksBlock,
+  Text,
+  Title
 } from "./FooterStyle";
 import { Link } from "react-router-dom";
 import {
@@ -18,18 +20,21 @@ const Footer = () => {
     <Container>
       <BlockOne>
         <Image src={logo} />
+        <Text>სოციალური სერვისების სააგენტო</Text>
+        <Title>Services.ge</Title>
       </BlockOne>
       <BlockTwo>
         <LinksBlock>
           <Link to="#">
-            <LinkedInIcon size="large"/>
+            <LinkedInIcon size="large" />
           </Link>
           <Link to="#">
-            <SkypeColorIcon size="large"/>
+            <SkypeColorIcon size="large" />
           </Link>
           <Link to="#">
-            <TwitterIcon size="large"/>
+            <TwitterIcon size="large" />
           </Link>
+          <div>Copyright © 2023 Services.ge All rights reserved</div>
         </LinksBlock>
       </BlockTwo>
     </Container>

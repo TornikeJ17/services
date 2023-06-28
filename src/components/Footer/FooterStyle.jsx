@@ -9,20 +9,38 @@ export const Container = styled.div`
   position: relative;
 `;
 export const BlockOne = styled.div`
+  display: flex;
+  flex-flow: column;
+  width: 25%;
   position: relative;
+  left: 28px;
+  top: 20px;
 `;
-export const BlockTwo = styled.div`
-  position: relative;
-`;
+export const BlockTwo = styled.div``;
 export const Image = styled.img`
-  width: 100px;
+  width: 50px;
+`;
+export const Text = styled.div`
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "BPG Nino Mtavruli", sans-serif;
+`;
+export const Title = styled.div`
   position: absolute;
-  top: 0;
+  left: 52px;
+  font-size: 22px;
+  font-weight: 600;
+  top: 15px;
+  font-family: "BPG Nino Mtavruli", sans-serif;
 `;
 export const LinksBlock = styled.div`
   position: absolute;
   right: 20px;
   top: 20px;
   display: flex;
-  gap:20px;
+  justify-content: end;
+  width: 400px;
+  max-width: 100%;
+  flex-flow: wrap;
+  gap: 20px;
 `;

@@ -31,7 +31,7 @@ const Dashboard = () => {
         <Carousel />
 
         <AboutContainer>
-          <Title>ჩვენს შესახებ</Title>
+          <Title><span>ჩვენს შესახებ</span></Title>
           <Blocks>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam
             placeat quaerat molestias at deserunt, delectus amet, distinctio,
@@ -69,7 +69,7 @@ const Dashboard = () => {
             quibusdam autem eveniet accusantium ipsam est totam id voluptas
             quod. Magni.
           </Blocks>
-          <Accordion panels={items} />
+          <Accordion className="accordionBlock" panels={items} />
         </AboutContainer>
       </Flex>
     </Container>

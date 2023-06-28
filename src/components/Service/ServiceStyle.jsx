@@ -6,6 +6,11 @@ export const Container = styled.div`
   justify-content: start;
   max-width: 100%;
   gap: 40px;
+  :global {
+    .ui-provider .ui-tooltip__content {
+      transfrom: ${({ tooltipPosition }) => console.log(tooltipPosition)};
+    }
+  }
 `;
 
 export const ItemsContainer = styled.div`
