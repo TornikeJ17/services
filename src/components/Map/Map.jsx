@@ -1,33 +1,35 @@
 import React, { useState, useEffect } from "react";
-import { GeorgianMap, ServiceBlock, Blocks, Title,BlockContainer } from "./MapStyle";
+import {
+  GeorgianMap,
+  ServiceBlock,
+  Blocks,
+  Title,
+  BlockContainer,
+  RegionContainer,
+} from "./MapStyle";
 import { Dialog } from "@fluentui/react-northstar";
 import { CloseIcon, NotepadPersonIcon } from "@fluentui/react-icons-northstar";
 const Map = ({ services, regions }) => {
   const [selectedPathId, setSelectedPathId] = useState(null);
-  const uniqueColors = [
-    ...new Set(services.map((service) => service.category[0].title)),
-  ];
-  const uniqueLocations = [...new Set(services.map((service) => service.name))];
-  console.log(uniqueLocations);
-  const colors = {
-    education: "განათლება",
-    socialHelp: "მატერიალური დახმარება",
-    healthcare: "ჯანდაცვა",
-    socialConsultation: "სოციალური კონსულტაცია",
-    reintegration: "რეინტეგრაცია",
-  };
+
   const uniqueColor = {
-    [colors.education]: "rgb(249, 236, 2)",
-    [colors.socialHelp]: "rgb(91, 95, 199)",
-    [colors.healthcare]: "rgb(35, 123, 75)",
-    [colors.socialConsultation]: "rgb(196, 49, 75)",
-    [colors.reintegration]: "rgb(148, 54, 112)",
+    apkhazeti: "rgb(181, 168, 255)",
+    adjara: "rgb(181, 168, 255)",
+    guria: "rgb(181, 168, 255)",
+    samegrelo: "rgb(181, 168, 255)",
+    imereti: "rgb(255, 193, 135)",
+    kakheti: "rgb(138, 213, 191)",
+    mtsketa: "rgb(138, 213, 191)",
+    racha: "rgb(255, 193, 135)",
+    tbilisi: "rgba(0, 129, 251, 0.52)",
+    qvemo: "rgb(138, 213, 191)",
+    samckhe: "rgb(255, 193, 135)",
+    shida: "rgb(255, 193, 135)",
   };
 
   const openDialog = (event, id) => {
     setSelectedPathId(id);
   };
-  console.log(regions);
   return (
     <GeorgianMap>
       <svg
@@ -90,44 +92,74 @@ const Map = ({ services, regions }) => {
             </>
           }
         />
-        {uniqueColors.map((service) => (
+        <RegionContainer>
           <div>
-            {service.includes(colors.education) ? (
-              <span
-                style={{ background: uniqueColor[colors.education] }}
-              ></span>
-            ) : service.includes(colors.socialHelp) ? (
-              <span
-                style={{ background: uniqueColor[colors.socialHelp] }}
-              ></span>
-            ) : service.includes(colors.healthcare) ? (
-              <span
-                style={{ background: uniqueColor[colors.healthcare] }}
-              ></span>
-            ) : service.includes(colors.socialConsultation) ? (
-              <span
-                style={{
-                  background: uniqueColor[colors.socialConsultation],
-                }}
-              ></span>
-            ) : service.includes(colors.reintegration) ? (
-              <span
-                style={{ background: uniqueColor[colors.reintegration] }}
-              ></span>
-            ) : null}
-            {service.includes(colors.education)
-              ? service
-              : service.includes(colors.socialHelp)
-              ? service
-              : service.includes(colors.healthcare)
-              ? service
-              : service.includes(colors.socialConsultation)
-              ? service
-              : service.includes(colors.reintegration)
-              ? service
-              : null}
+            <span style={{ background: uniqueColor.apkhazeti}}></span>
+            აფხაზეთი
           </div>
-        ))}
+          <div>
+            <span style={{ background: uniqueColor.adjara }}></span>
+            აჭარა
+          </div>
+          <div>
+            <span style={{ background: uniqueColor.guria }}></span>
+            გურია
+          </div>
+          <div>
+            <span
+              style={{ background: uniqueColor.samegrelo }}
+            ></span>
+            სამეგრელო-ზემო სვანეთი
+          </div>
+          <div>
+            <span
+              style={{ background: uniqueColor.imereti }}
+            ></span>
+            იმერეთი
+          </div>
+          <div>
+            <span
+              style={{ background: uniqueColor.kakheti }}
+            ></span>
+            კახეთი
+          </div>
+          <div>
+            <span
+              style={{ background: uniqueColor.mtsketa }}
+            ></span>
+            მცხეთა-მთიანეთი
+          </div>
+          <div>
+            <span
+              style={{ background: uniqueColor.racha }}
+            ></span>
+            რაჭა-ლეჩხუმი-ქვემო სვანეთი
+          </div>
+          <div>
+            <span
+              style={{ background: uniqueColor.tbilisi }}
+            ></span>
+            თბილისი
+          </div>
+          <div>
+            <span
+              style={{ background: uniqueColor.qvemo }}
+            ></span>
+            ქვემო ქართლი
+          </div>
+          <div>
+            <span
+              style={{ background: uniqueColor.samckhe }}
+            ></span>
+            სამცხე-ჯავახეთი
+          </div>
+          <div>
+            <span
+              style={{ background: uniqueColor.shida }}
+            ></span>
+            შიდა ქართლი
+          </div>
+        </RegionContainer>
       </ServiceBlock>
     </GeorgianMap>
   );

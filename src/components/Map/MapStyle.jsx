@@ -14,6 +14,8 @@ export const GeorgianMap = styled.div`
   div {
     display: flex;
     gap: 10px;
+    flex-flow: wrap;
+    align-items: center;
     span {
       position: relative;
       top: 2px;
@@ -126,7 +128,7 @@ export const BlockContainer = styled.div`
   display: flex;
   flex-flow: wrap;
   gap: 20px;
-  margin-top:10px;
+  margin-top: 10px;
 `;
 export const ServiceBlock = styled.div`
   .ui-dialog {
@@ -134,4 +136,10 @@ export const ServiceBlock = styled.div`
       position: relative;
     }
   }
+`;
+
+export const RegionContainer = styled.div`
+  width: 500px;
+  max-width: 100%;
+  margin-bottom: 50px;
 `;
