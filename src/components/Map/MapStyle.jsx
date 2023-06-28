@@ -5,6 +5,7 @@ export const GeorgianMap = styled.div`
   justify-content: start;
   margin-top: 60px;
   flex-flow: column;
+  height: 100vh;
   svg {
     max-width: 100%;
     path {

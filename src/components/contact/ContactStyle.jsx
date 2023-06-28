@@ -6,8 +6,9 @@ export const Container = styled.div`
   justify-content: start;
   width: 1550px;
   max-width: 100%;
-  margin-bottom: 57px;
+  height: 100vh;
   .ui-form {
+    justify-content: start !important;
     width: 50%;
     .ui-form__dropdown {
       .ui-form__label {
