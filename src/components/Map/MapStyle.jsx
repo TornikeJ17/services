@@ -112,6 +112,9 @@ export const Blocks = styled.div`
     font-family: "BPG Nino Mtavruli", sans-serif;
     display: flex;
     gap: 10px;
+    a {
+      color: #222;
+    }
     svg {
       position: relative;
       top: 2px;

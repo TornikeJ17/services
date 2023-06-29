@@ -9,8 +9,10 @@ import {
 } from "./MapStyle";
 import { Dialog } from "@fluentui/react-northstar";
 import { CloseIcon, NotepadPersonIcon } from "@fluentui/react-icons-northstar";
+import { Link } from "react-router-dom";
 const Map = ({ services, regions }) => {
   const [selectedPathId, setSelectedPathId] = useState(null);
+  const [selectedLocation, setSelectedLocation] = useState("");
 
   const uniqueColor = {
     apkhazeti: "rgb(181, 168, 255)",
@@ -29,6 +31,10 @@ const Map = ({ services, regions }) => {
 
   const openDialog = (event, id) => {
     setSelectedPathId(id);
+  };
+  const handleLocationClick = (location) => {
+    setSelectedLocation(location);
+    // navigate("/", { state: { location: location } });
   };
   return (
     <GeorgianMap>
@@ -78,7 +84,16 @@ const Map = ({ services, regions }) => {
                     )
                   ).map((location) => (
                     <Blocks key={location}>
-                      <span>{location}</span>{" "}
+                      <span>
+                        <Link
+                          to={{
+                            pathname: "/",
+                            search: `?location=${location}`,
+                          }}
+                        >
+                          {location}
+                        </Link>
+                      </span>
                       <span>
                         <NotepadPersonIcon outline size="medium" />
                         {
@@ -94,7 +109,7 @@ const Map = ({ services, regions }) => {
         />
         <RegionContainer>
           <div>
-            <span style={{ background: uniqueColor.apkhazeti}}></span>
+            <span style={{ background: uniqueColor.apkhazeti }}></span>
             აფხაზეთი
           </div>
           <div>
@@ -106,57 +121,39 @@ const Map = ({ services, regions }) => {
             გურია
           </div>
           <div>
-            <span
-              style={{ background: uniqueColor.samegrelo }}
-            ></span>
+            <span style={{ background: uniqueColor.samegrelo }}></span>
             სამეგრელო-ზემო სვანეთი
           </div>
           <div>
-            <span
-              style={{ background: uniqueColor.imereti }}
-            ></span>
+            <span style={{ background: uniqueColor.imereti }}></span>
             იმერეთი
           </div>
           <div>
-            <span
-              style={{ background: uniqueColor.kakheti }}
-            ></span>
+            <span style={{ background: uniqueColor.kakheti }}></span>
             კახეთი
           </div>
           <div>
-            <span
-              style={{ background: uniqueColor.mtsketa }}
-            ></span>
+            <span style={{ background: uniqueColor.mtsketa }}></span>
             მცხეთა-მთიანეთი
           </div>
           <div>
-            <span
-              style={{ background: uniqueColor.racha }}
-            ></span>
+            <span style={{ background: uniqueColor.racha }}></span>
             რაჭა-ლეჩხუმი-ქვემო სვანეთი
           </div>
           <div>
-            <span
-              style={{ background: uniqueColor.tbilisi }}
-            ></span>
+            <span style={{ background: uniqueColor.tbilisi }}></span>
             თბილისი
           </div>
           <div>
-            <span
-              style={{ background: uniqueColor.qvemo }}
-            ></span>
+            <span style={{ background: uniqueColor.qvemo }}></span>
             ქვემო ქართლი
           </div>
           <div>
-            <span
-              style={{ background: uniqueColor.samckhe }}
-            ></span>
+            <span style={{ background: uniqueColor.samckhe }}></span>
             სამცხე-ჯავახეთი
           </div>
           <div>
-            <span
-              style={{ background: uniqueColor.shida }}
-            ></span>
+            <span style={{ background: uniqueColor.shida }}></span>
             შიდა ქართლი
           </div>
         </RegionContainer>

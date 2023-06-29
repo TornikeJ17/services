@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { Container, Title, MenuContainer } from "./SidebarStyle";
 import { Checkbox, Button, Accordion } from "@fluentui/react-northstar";
+import { useLocation } from "react-router-dom";
 
 const Sidebar = ({ services, handleFilter }) => {
   const [selectedLocations, setSelectedLocations] = useState([]);
   const [selectedCategoryTitles, setSelectedCategoryTitles] = useState([]);
   const [selectedBenefits, setSelectedBenefits] = useState([]);
+
+  const location = useLocation().search;
+  const selectedLocation = new URLSearchParams(location).get("location");
+
   const uniqueLocations = [
     ...new Set(services.map((service) => service.location)),
   ];
@@ -70,6 +75,23 @@ const Sidebar = ({ services, handleFilter }) => {
   const Menu = [
     {
       key: 1,
+      title: "ლოკაციები",
+      content: [
+        uniqueLocations.map((location) => (
+          <Checkbox
+            key={location}
+            label={location}
+            checked={
+              selectedLocations.includes(location?.toLowerCase()) ||
+              location === selectedLocation
+            }
+            onChange={() => handleLocationFilter(location?.toLowerCase())}
+          />
+        )),
+      ],
+    },
+    {
+      key: 2,
       title: "კატეგორიები",
       content: [
         uniqueTitles.map((title) => (
@@ -82,20 +104,7 @@ const Sidebar = ({ services, handleFilter }) => {
         )),
       ],
     },
-    {
-      key: 2,
-      title: "ლოკაციები",
-      content: [
-        uniqueLocations.map((location) => (
-          <Checkbox
-            key={location}
-            label={location}
-            checked={selectedLocations.includes(location?.toLowerCase())}
-            onChange={() => handleLocationFilter(location?.toLowerCase())}
-          />
-        )),
-      ],
-    },
+
     {
       key: 3,
       title: "ბენეფიციარები",
@@ -116,7 +125,12 @@ const Sidebar = ({ services, handleFilter }) => {
     <Container>
       <Title>სერვისები</Title>
       <MenuContainer>
-        <Accordion className="accordion" panels={Menu} exclusive />
+        <Accordion
+          className="accordion"
+          defaultActiveIndex={0}
+          panels={Menu}
+          exclusive
+        />
       </MenuContainer>
       <Button onClick={handleClearAll} content="გასუფთავება" primary />
     </Container>
