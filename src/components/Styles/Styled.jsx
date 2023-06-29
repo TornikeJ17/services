@@ -8,7 +8,6 @@ export const GlobalStyle = createGlobalStyle`
         padding:0;
         font-family: 'Roboto', sans-serif;
         background: rgb(249, 249, 249);
-        height: 100vh;
     }
     a{
         text-decoration:none;
@@ -38,6 +37,7 @@ export const Container = styled.div`
   flex-flow: column;
   align-items: center;
   background: #f9f9f9;
+  position: relative;
 `;
 export const ChatButton = styled.div`
   position: fixed;

@@ -39,7 +39,8 @@ export const BlockForItems = styled.div`
   align-items: center;
   gap: 30px;
   .ui-flex {
-    margin-bottom: 20px;
+    margin-bottom: 120px;
+    
   }
 `;
 

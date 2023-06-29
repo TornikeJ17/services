@@ -17,16 +17,18 @@ const App = () => {
     <Container>
       <GlobalStyle />
       <Menu />
-      <Routes>
-        <Route path="/" element={<LandingPage services={services} />} />
-        <Route
-          path="/map"
-          element={<Map services={services} regions={regions} />}
-        />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/:id" element={<ServicePage service={services} />} />
-        <Route path="/contact" element={<Contact services={services} />} />
-      </Routes>
+      <div style={{ minHeight: "100vh" }}>
+        <Routes>
+          <Route path="/" element={<LandingPage services={services} />} />
+          <Route
+            path="/map"
+            element={<Map services={services} regions={regions} />}
+          />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/:id" element={<ServicePage service={services} />} />
+          <Route path="/contact" element={<Contact services={services} />} />
+        </Routes>
+      </div>
       <ChatButton onClick={() => setChatButton(!chatButton)}>
         {chatButton ? (
           <svg

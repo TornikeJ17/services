@@ -6,7 +6,6 @@ export const Container = styled.div`
   top: 60px;
   width: 1550px;
   max-width: 100%;
-  height: 100vh;
   justify-content: space-between;
   .ui-button {
     background: rgb(220, 237, 247);

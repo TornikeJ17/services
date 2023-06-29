@@ -14,6 +14,7 @@ export const AboutContainer = styled.div`
   display: flex;
   flex-flow: column;
   gap: 20px;
+  margin-bottom: 100px;
 `;
 export const Title = styled.div`
   font-family: "BPG Nino Mtavruli", sans-serif;

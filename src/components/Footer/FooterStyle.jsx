@@ -6,7 +6,8 @@ export const Container = styled.div`
   background: rgb(220, 237, 247);
   height: 100px;
   border-radius: 4px 4px 0px 0px;
-  position: relative;
+  position: absolute;
+  bottom: 0;
 `;
 export const BlockOne = styled.div`
   display: flex;
