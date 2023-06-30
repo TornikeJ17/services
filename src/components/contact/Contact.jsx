@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, MapContainer } from "./ContactStyle";
+import { Container, MapContainer,Block} from "./ContactStyle";
 import {
   Form,
   FormInput,
@@ -15,57 +15,22 @@ const Contact = ({ services }) => {
     email: "",
     phoneNumber: "",
     title: "",
-    comment: ""
+    comment: "",
   });
 
   const handleFormChange = (event, { name, value }) => {
     setFormValues((prevValues) => ({
       ...prevValues,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const { serviceName, email, phoneNumber, title, comment } = formValues;
-  const isFormEmpty = !serviceName || !email || !phoneNumber || !title || !comment;
+  const isFormEmpty =
+    !serviceName || !email || !phoneNumber || !title || !comment;
 
   return (
     <Container>
-      <Form>
-        <FormDropdown
-          label="სერვისის დასახელება"
-          items={servicesName}
-          name="serviceName"
-          onChange={handleFormChange}
-        />
-        <FormInput
-          className="formInputs"
-          label="ელფოსტა"
-          name="email"
-          required
-          onChange={handleFormChange}
-        />
-        <FormInput
-          className="formInputs"
-          label="ტელეფონის ნომერი"
-          name="phoneNumber"
-          required
-          onChange={handleFormChange}
-        />
-        <FormInput
-          className="formInputs"
-          label="სათაური"
-          name="title"
-          required
-          onChange={handleFormChange}
-        />
-        <FormTextArea
-          label="კომენტარი"
-          name="comment"
-          required
-          onChange={handleFormChange}
-        />
-        <FormButton content="გაგზავნა" primary disabled={isFormEmpty} />
-      </Form>
       <MapContainer>
         <div className="mapouter">
           <div className="gmap_canvas">
@@ -81,6 +46,17 @@ const Contact = ({ services }) => {
           </div>
         </div>
       </MapContainer>
+      <Block>
+        <div>მეილი: example@hotmail.com</div>
+        <div>მისამართი: თბილისი ქუჩა</div>
+        <div>ტელ: 987182941940</div>
+        <div>მეილი: example@hotmail.com</div>
+        <div>მისამართი: თბილისი ქუჩა</div>
+        <div>ტელ: 987182941940</div>
+        <div>მეილი: example@hotmail.com</div>
+        <div>მისამართი: თბილისი ქუჩა</div>
+        <div>ტელ: 987182941940</div>
+      </Block>
     </Container>
   );
 };

@@ -89,3 +89,13 @@ export const MapContainer = styled.div`
     height: 500px !important;
   }
 `;
+
+export const Block = styled.div`
+  display: flex;
+  align-items: start;
+  flex-flow: column;
+  gap:10px;
+  position:relative;
+  top:20px;
+  left: 40px;
+`

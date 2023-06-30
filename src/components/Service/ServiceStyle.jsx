@@ -94,5 +94,6 @@ export const ItemContainerBlock = styled.div`
 `;
 export const ServiceBenefits = styled.div`
   font-family: "BPG Nino Mtavruli", sans-serif;
-  font-size: 16px;
+  font-size: 14px;
+  color: #8b8b8b;
 `;

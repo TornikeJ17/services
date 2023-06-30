@@ -164,6 +164,7 @@ const Service = ({ services }) => {
           <ItemsContainer>
             {visibleServices.map((service) => (
               <Segment
+                styles={{borderTop:"4px"}}
                 key={service.id}
                 onClick={() => InsideService(service.id)}
                 color={
